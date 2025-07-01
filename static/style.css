@@ -1,0 +1,117 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body Layout */
+body {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    display: block; /* Use block layout */
+    margin: 0; /* Remove any margin */
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    position: fixed; /* Fix the navbar to the top */
+    width: 100%; /* Ensure it spans the full width */
+    top: 0;
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+.nav-container ul {
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the items horizontally */
+    padding: 0;
+}
+
+.nav-container ul li {
+    margin: 0 15px; /* Add space between items */
+}
+
+.nav-container ul li a {
+    color: #ffdd57;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    display: inline-block; /* Make the link block-level for padding to work */
+}
+
+.nav-container ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Main Content Container */
+.container {
+    margin-top: 60px; /* Adjust margin to prevent overlap with navbar */
+    padding: 40px;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    width: 90%; /* Keep the width similar as before */
+    max-width: 800px; /* Limit the width for better layout */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* Movie Form Styles */
+form {
+    margin: 30px 0;
+}
+
+label {
+    font-size: 1.1em;
+    color: #ffffff;
+}
+
+select, input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+button {
+    background-color: #ffdd57;
+    color: #1c1c1c;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffbb00;
+}
+
+/* Movie List Styles */
+h2 {
+    margin-top: 30px;
+    font-size: 1.5em;
+    color: #ffdd57;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background-color: #333;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 1em;
+    text-align: left;
+}

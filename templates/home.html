@@ -1,0 +1,51 @@
+<!-- home.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+
+<div class="home-container">
+    <h1>Welcome to the Movie Recommendation System</h1>
+    <p>Hello, {{ session['username'] }}! You are now logged in.</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+
+    <form action="{{ url_for('filter_by_genre') }}" method="POST">
+        <label for="genres">Choose a genre:</label>
+        <select name="genres" id="genres" required>
+            <option value="" disabled selected>Select a genre</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Fantasy">Fantasy</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Drama">Drama</option>
+            <option value="Horror">Horror</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+        </select>
+        <button type="submit">Find Movies</button>
+    </form>
+
+    {% if movies %}
+        <h2>Recommended Movies</h2>
+        <ul>
+            {% for movie in movies %}
+                <li>{{ movie }}</li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h2>No Recommendations Available</h2>
+        <p>Please select a genre to get movie recommendations.</p>
+    {% endif %}
+</div>
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+
+{% endblock %}

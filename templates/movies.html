@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='movie.css') }}">
+<form method="POST" action="{{ url_for('search_movies') }}">
+    <input type="text" name="search_query" placeholder="Search by title or genre" required>
+    <button type="submit">Search</button>
+</form>
+<div class="container mt-5">
+    <h1>Movies</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Director</th>
+                <th>Duration</th>
+                <th>Gross</th>
+                <th>IMDB Score</th>
+                <th>Genres</th>
+                <th>Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for movie in movies %}
+            <tr>
+                <td>{{ movie.movie_title }}</td>
+                <td>{{ movie.director_name }}</td>
+                <td>{{ movie.duration }}</td>
+                <td>{{ movie.gross }}</td>
+                <td>{{ movie.imdb_score }}</td>
+                <td>{{ movie.genres }}</td>
+                <td>{{movie.title_year}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add a New Movie</h2>
+    <form action="{{ url_for('add_movie') }}" method="POST">
+        <div class="form-group">
+            <label for="movie_title">Movie Title</label>
+            <input type="text" class="form-control" name="movie_title" required>
+        </div>
+        <div class="form-group">
+            <label for="director_name">Director Name</label>
+            <input type="text" class="form-control" name="director_name" required>
+        </div>
+        <div class="form-group">
+            <label for="duration">Duration</label>
+            <input type="text" class="form-control" name="duration" required>
+        </div>
+        <div class="form-group">
+            <label for="gross">Gross</label>
+            <input type="text" class="form-control" name="gross" required>
+        </div>
+        <div class="form-group">
+            <label for="imdb_score">IMDB Score</label>
+            <input type="text" class="form-control" name="imdb_score" required>
+        </div>
+        <div class="form-group">
+            <label for="genres">Genres</label>
+            <input type="text" class="form-control" name="genres" required>
+        </div>
+        <div class="form-group">
+            <label for="title_year">Title Year</label>
+            <input type="text" class="form-control" name="title_year" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Movie</button>
+    </form>
+</div>
+{% endblock %}

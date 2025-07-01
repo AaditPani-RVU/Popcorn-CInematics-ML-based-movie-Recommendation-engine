@@ -1,0 +1,115 @@
+/* General Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Layout */
+body {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Login Form Container */
+.form-container {
+    background-color: #2c2c2c;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #ffdd57;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Form Elements */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border: 1px solid #555;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #ffdd57;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1em;
+    background-color: #ffdd57;
+    color: #1c1c1c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ffbb00;
+}
+
+/* Link Styles */
+p {
+    margin-top: 20px;
+    font-size: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: #ffdd57;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #ffbb00;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    button {
+        font-size: 1em;
+    }
+}
